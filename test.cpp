@@ -1,15 +1,28 @@
 #include <iostream>
 
+namespace first{
+    int x = 1;
+}
+namespace second{
+    int x = 2;
+}
+
 int main(){
 
-    // The const keyword specifies that a variable's value is constant
-    // tells the compiler to prevent anything from modifying it
-    // (read-only)
+    // Namespace = providers a solution for preventing name conflicts
+    //             in large projects. Each entity needs a unique name.
+    //             A namespace allows for identically named entities
+    //             as long as the namespaces are differeant.
 
-    const double pi = 3.14159;
-    const int LIGHT_SPEED = 299792458;
-    const int WIDTH = 1920;
-    const int HEIGHT = 1080;
+    using namespace first;
+    std::cout << x;
+    int x = 0;
+
+    /*
+    std::cout << x << "\n";
+    std::cout << first::x << "\n";
+    std::cout << second::x << "\n";
+    */
 
     return 0;
 }
