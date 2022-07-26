@@ -3,25 +3,17 @@
 
 int main(){
 
-    int rows;
-    int columns;
-    char symbol;
+    // pseudo-random = NOT truly random (but close)
 
-    std::cout << "How many rows?: ";
-    std::cin >> rows;
+    srand(time(NULL));
 
-    std::cout << "How many columns?: ";
-    std::cin >> columns;
+    int num = (rand() % 6) + 1;
+    int num1 = (rand() % 6) + 1;
+    int num2 = (rand() % 6) + 1;
 
-    std::cout << "Enter a symbol to use: ";
-    std::cin >> symbol;
-    
-    for (int i = 1; i <= rows; i++){
-        for(int j = 1; j <= columns; j++){
-            std::cout << symbol << ' ';
-        }
-        std::cout << '\n';
-    }
+    std::cout << num << '\n';
+    std::cout << num1 << '\n';
+    std::cout << num2 << '\n';
 
     return 0;
 }
