@@ -1,36 +1,46 @@
 #include <iostream>
-
+#include <string>
 
 int main(){
     
-    double temp;
-    char unit;
+    std::string name;
 
-    std::cout << "***** Temperature conversion *****\n";
-    std::cout << "F = Fahrenheit\n";
-    std::cout << "C = Celsius\n";
-    std::cout << "What unit would you like to convert to: ";
-    std::cin >> unit;
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
 
-    if (unit == 'F' || unit == 'f'){
-        std::cout << "Enter the tenperature in Celsius: ";
-        std::cin >> temp;
-
-        temp = (1.8 * temp) + 32.0;
-        std::cout << "Temperature is: " << temp << "F\n"; 
-    } 
-    else if (unit == 'C' || unit == 'c'){
-        std::cout << "Enter the temperature in Fahrenheit: ";
-        std::cin >> temp;
-
-        temp = (temp -32) / 1.8;
-        std::cout << "Temperature is: " << temp << "C\n";
+    if(name.length() > 12){
+        std::cout << "Your name can't be ovber 12 characters";
     }
     else{
-        std::cout << "Please enter in only C or F";
+        std::cout << "Welcome " << name;
     }
 
-    std::cout << "************************************";
+    /*
+    if(name.empty() > 12){
+        std::cout << "You didn't enter your name";
+    }
+    else{
+        std::cout << "hello " << name;
+    }  
+    */
+    /*
+    name.clear();
+    std::cout << "Hello " << name;
+    */
+    /*
+    name.append("@gmail.com");
+    std::cout << "Tour username is now " << name;
+    */
+
+    //std::cout << name.at(0);
+
+    //name.insert(0, "@");
+    //std::cout << name;  
+
+    //std::cout << name.find(' ');
+
+    //name.erase(0, 3);
+    //std::cout << name;
 
     return 0;
 }
