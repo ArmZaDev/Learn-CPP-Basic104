@@ -2,43 +2,29 @@
 
 
 int main(){
-    char op;
-    double num1 ,num2;
-    double result;
+    // tarnary operators ?: = replacement to an ifelse statement
+    // condition ? expression1 : expression2;
 
-    std::cout << "********** CALCULATOR **********\n";
+    int grade = 75;
+    grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail";
 
-    std::cout << "Enter num #1: ";
-    std::cin >> num1;
+    int number = 8;
+    number % 2 == 0 ? std::cout << "ODD" : std::cout << "EVEN";
 
-    std::cout << "Enter either (+ - * /): ";
-    std::cin >> op;
 
-    std::cout << "Enter num #2: ";
-    std::cin >> num2;
+    bool hungry = true;
 
-    switch(op){
-        case '+':
-            result = num1 + num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        case '-':
-            result = num1 - num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        case '*':
-            result = num1 * num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        case '/':
-            result = num1 / num2;
-            std::cout << "result: " << result << '\n';
-            break;
-        default:
-            std::cout << "That wasn't a valid response";
+    //hungry ? std::cout << "You are hungry" : std::cout << "You are full";
+    std::cout << (hungry ? "You are hungry" : "You are full");
+
+    /*
+    if (grade >= 60){
+        std::cout << "You pass!";
     }
-
-    std::cout << "********************************\n";
+    else {
+        std::cout << "You fail!";
+    }
+    */
 
     return 0;
 }
