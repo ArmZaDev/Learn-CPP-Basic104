@@ -2,24 +2,25 @@
 
 
 int main(){
+
+    int rows;
+    int columns;
+    char symbol;
+
+    std::cout << "How many rows?: ";
+    std::cin >> rows;
+
+    std::cout << "How many columns?: ";
+    std::cin >> columns;
+
+    std::cout << "Enter a symbol to use: ";
+    std::cin >> symbol;
     
-    // break = break out of a loop
-    // continue = skip current iteration
-
-    for (int i = 1; i <= 5; i++){
-        if(i == 3){
-            break;
+    for (int i = 1; i <= rows; i++){
+        for(int j = 1; j <= columns; j++){
+            std::cout << symbol << ' ';
         }
-        std::cout << i << '\n';
-    }
-
-    std::cout << "\n**********************\n";
-
-    for (int i = 1; i <= 5; i++){
-        if(i == 3){
-            continue;
-        }
-        std::cout << i << '\n';
+        std::cout << '\n';
     }
 
     return 0;
