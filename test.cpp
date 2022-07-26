@@ -3,18 +3,11 @@
 
 int main(){
     
-    // do while loop = do some block of code first,
-    //                 THEN repeat again if condition is true
+    for(int i = 10; i >= 1; i--){
+        std::cout << i << '\n';
+    }
 
-    int number ;
-
-    do{
-        std::cout << "Enter a positive #: ";
-        std::cin >> number;
-        
-    }while (number < 0);
-
-    std::cout << "The # is: " << number;
+    std::cout << "HAPPY NEW YEAR!\n";
 
     return 0;
 }
