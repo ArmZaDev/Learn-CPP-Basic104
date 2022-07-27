@@ -2,11 +2,21 @@
 
 int main(){
 
-    std::string students[] = {"Naruto", "Sasuke", "Sakura"};
+    // foreach loop = loop that eases the traversal over an 
+    //                iterable data set
 
-    for(int i = 0; i < sizeof(students)/sizeof(std::string); i++){
-        std::cout << students[i] << '\n';
+    int grades[] = {65, 72, 81, 93};
+
+    for(int grade : grades){
+        std::cout << grade << ' ';
     }
+
+    //std::string students[] = {"Naruto", "Sasuke", "Sakura"};
+    /*
+    for(std::string student : students){
+        std::cout << student << ' ';
+    }
+    */
 
     return 0;
 }
