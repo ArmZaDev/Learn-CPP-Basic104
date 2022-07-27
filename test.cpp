@@ -1,24 +1,37 @@
 #include <iostream>
 
-double getTotal(double prices[], int size);
+int sreachArray(int array[], int size, int element);
 
 int main(){
 
-    double prices[] = {49.99, 15.05, 75, 9.99};
-    int size = sizeof(prices)/sizeof(prices[0]);
-    double total = getTotal(prices, size);
+    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int size = sizeof(numbers)/sizeof(numbers[0]);
+    int index;
+    int myNum;
 
-    std::cout << "$" << total;
+    std::cout << "Enter element to search for: " << '\n';
+    std::cin >> myNum;
+
+    index = sreachArray(numbers, size, myNum);
+
+    if(index != -1){
+        std::cout << myNum << " is at index " << index;
+    }
+    else{
+        std::cout << myNum << " is not in the array";
+    }
 
     return 0;
 }
 
-double getTotal(double prices[], int size){
-    double total = 0;
+int sreachArray(int array[], int size, int element){
+    
+    for(int i = 0; i < size; i++){
+        if(array[i] == element){
+            return i;
 
-    for(int i =0; i < size; i++){
-        total +=prices[i];
+        }
     }
-    return total;
+    return -1;
 
 }
