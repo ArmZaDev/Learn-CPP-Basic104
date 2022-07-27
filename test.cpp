@@ -1,37 +1,35 @@
 #include <iostream>
 
-int sreachArray(int array[], int size, int element);
+void sort(int array[], int size);
 
 int main(){
 
-    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int size = sizeof(numbers)/sizeof(numbers[0]);
-    int index;
-    int myNum;
+    int array[] = {10, 1, 9, 2, 8, 3, 7, 4, 6, 5};
+    int size = sizeof(array)/sizeof(array[0]);
 
-    std::cout << "Enter element to search for: " << '\n';
-    std::cin >> myNum;
+    sort(array, size);
 
-    index = sreachArray(numbers, size, myNum);
-
-    if(index != -1){
-        std::cout << myNum << " is at index " << index;
-    }
-    else{
-        std::cout << myNum << " is not in the array";
-    }
+    for(int element : array){
+        std::cout << element << " ";
+    }    
 
     return 0;
 }
 
-int sreachArray(int array[], int size, int element){
-    
-    for(int i = 0; i < size; i++){
-        if(array[i] == element){
-            return i;
+void sort(int array[], int size){
 
+    int temp;
+
+    for(int i = 0; i < size - 1; i++){ // size = 9, i = 1
+        for(int j = 0; j < size - i - 1; j++){ //size = 8, j = 1
+            if(array[j] > array[j + 1]){
+                temp = array[j];          // 10
+                array[j] = array[j + 1];  // 5
+                array[j + 1] = temp;      // 10
+            }
         }
     }
-    return -1;
 
-}
+}//      1 9  2  8 3 7  4 6  5 10
+
+// index 0 1  2  3 4 5  6 7  8 9
