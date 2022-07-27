@@ -2,20 +2,17 @@
 
 int main(){
 
-    // array = a data structure that can hold multiple values
-    //         values are accessed by an index number
-    //         "kind of like a variable that holds miltiple values"
-    
-    //std::string cars[] = {"Corvertte", "Mustang", "camry"};
-    std::string cars[3];
-    
-    cars[0] = "Camaro";
-    cars[1] = "Tesla";
-    cars[2] = "Audi";
-    
-    std::cout << cars[0] << '\n';
-    std::cout << cars[1] << '\n';
-    std::cout << cars[2] << '\n';
+    // sizeof() = determiners the size in bytes of a:
+    //            variable, data type, class, object, etc. 
+
+    std::string name = "Inazuma Eleven";
+    double gpa = 2.5;
+    char grade = 'F';
+    bool student = true;
+    char grades[] = {'A', 'B', 'C', 'D', 'F'};
+    std::string students[] = {"Naruto", "Sasuke", "Sakura", "Kakashi"};
+
+    std::cout << sizeof(students)/sizeof(std::string) << " elements\n";
 
     return 0;
 }
