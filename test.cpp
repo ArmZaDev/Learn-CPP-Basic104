@@ -2,17 +2,11 @@
 
 int main(){
 
-    // sizeof() = determiners the size in bytes of a:
-    //            variable, data type, class, object, etc. 
+    std::string students[] = {"Naruto", "Sasuke", "Sakura"};
 
-    std::string name = "Inazuma Eleven";
-    double gpa = 2.5;
-    char grade = 'F';
-    bool student = true;
-    char grades[] = {'A', 'B', 'C', 'D', 'F'};
-    std::string students[] = {"Naruto", "Sasuke", "Sakura", "Kakashi"};
-
-    std::cout << sizeof(students)/sizeof(std::string) << " elements\n";
+    for(int i = 0; i < sizeof(students)/sizeof(std::string); i++){
+        std::cout << students[i] << '\n';
+    }
 
     return 0;
 }
