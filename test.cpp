@@ -1,19 +1,28 @@
 #include <iostream>
-
+#include <string>
 
 int main(){
 
-    // fill() = Filla range of elements with a secified value
-    //          fill(begin, end, value)
+    std::string foods[5];
+    int size = sizeof(foods)/sizeof(foods[0]);
+    std::string temp;
 
-    const int SIZE = 10;
-    std::string foods[SIZE];
+    for(int i = 0; i < size; i++){
+        std::cout << "Enter a food you like or 'q' to quit #" << i + 1 << ": ";
+        std::getline(std::cin, temp);
 
-    fill(foods, foods + (SIZE / 2), "pizza");
-    fill(foods + (SIZE / 2), foods + SIZE, "hamburgers");   
+        if(temp == "q"){
+            break;
+        }
+        else{
+            foods[i] = temp;
+        }
+    }
 
-    for(std::string food : foods){
-        std::cout << food << '\n';
+    std::cout << "You like the following food:\n";
+
+    for(int i = 0; !foods[i].empty(); i++){
+        std::cout << foods[i] << '\n'; 
     }
 
     return 0;
