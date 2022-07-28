@@ -1,23 +1,49 @@
 #include <iostream>
 
-void printInfo(const std::string &name, const int &age);
+int getDigit(const int number);
+int sumOddDigits(const std::string cardNumber);
+int sumEvenDigits(const std::string cardNumber);
 
 int main(){
 
-    // const parameter = parameter that is effectively read-only
-    //                   code is more secure & converys intent
-    //                   useful for references and pointers
+    std::string cardNumber;
+    int result = 0;
 
-    std::string name = "Naruto";
-    int age = 33;
+    std::cout << "Enter a credit card #: ";
+    std::cin >> cardNumber;
 
-    printInfo(name, age);
+    result = sumEvenDigits(cardNumber) + sumOddDigits(cardNumber);
+
+    if(result % 10 == 0){
+        std::cout << cardNumber<< " is valid";
+    }
+    else{
+        std::cout << cardNumber << " is not valid";
+    }
 
     return 0;
 }
 
-void printInfo(const std::string &name, const int &age){
-    std::cout << name << '\n';
-    std::cout << age << '\n';       
+int getDigit(const int number){
+    
+    return number % 10 + (number / 10 % 10);
+}
+int sumOddDigits(const std::string cardNumber){
 
+    int sum = 0;
+
+    for(int i = cardNumber.size() - 1; i >= 0; i-=2){
+        sum += cardNumber[i] - '0';
+    }
+    return sum;
+} 
+int sumEvenDigits(const std::string cardNumber){
+
+    int sum = 0;
+
+    for(int i = cardNumber.size() - 2; i >= 0; i-=2){
+        sum += getDigit((cardNumber[i] - '0') * 2);
+    }
+
+    return sum;
 }
