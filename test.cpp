@@ -1,28 +1,35 @@
 #include <iostream>
 
-enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3,
-          thurday = 4, friday = 5, saturday = 6};
+class Human{
+    public:
+        std::string name;
+        std::string occupation;
+        int age;
+
+        void eat(){
+            std::cout << "This person is eating\n";
+        }
+        void drink(){
+            std::cout << "This person is drinking\n";
+        }
+        void sleep(){
+            std::cout << "This person is sleeping\n";
+        }
+};
 
 int main(){
     
-    Day today = friday;
+    Human human1;
 
-    switch(today){
-        case sunday: std::cout << "It is Sunday!\n";
-                     break;
-        case monday: std::cout << "It is Monday!\n";
-                     break;
-        case tuesday: std::cout << "It is Tuesday!\n";
-                     break;
-        case wednesday: std::cout << "It is Wednesday!\n";
-                     break;
-        case thurday: std::cout << "It is Thurday!\n";
-                     break;
-        case friday: std::cout << "It is Friday!\n";
-                     break;
-        case saturday: std::cout << "It is Saturday!\n";
-                     break;
-    }
+    human1.name = "Tommy";
+    human1.occupation = "bookmaker";
+    human1.age = 35;
+
+    std::cout << human1.name << '\n';
+    std::cout << human1.occupation << '\n';
+    std::cout << human1.age << '\n';
+
+    human1.drink();
 
     return 0;
 }
