@@ -1,20 +1,41 @@
 #include <iostream>
 
-struct student{
-    std::string name;
-    double gpa;
-    bool enrolled = true;
+struct Car{
+    std::string model;
+    int year;
+    std::string color;
 };
+
+void printCar(Car &car);
+void paintCar(Car &car, std::string color);
 
 int main(){
     
-    student student1;
-    student1.name = "Naruto";
-    student1.gpa = 3.2;
+    Car car1;
+    Car car2;
 
-    std::cout << student1.name << '\n';
-    std::cout << student1.gpa << '\n';
-    std::cout << student1.enrolled << '\n';
+    car1.model = "Mustang";
+    car1.year = 2023;
+    car1.color = "red";
+
+    car2.model = "Audi";
+    car2.year = 2022;
+    car2.color = "blue";
+
+    paintCar(car1, "Grenn");
+
+    printCar(car1);
+    printCar(car2);
 
     return 0;
+}
+
+void printCar(Car &car){
+    std::cout << car.model << '\n';
+    std::cout << car.year << '\n';
+    std::cout << car.color << '\n';
+}
+
+void paintCar(Car &car, std::string color){
+    car.color = color;
 }
