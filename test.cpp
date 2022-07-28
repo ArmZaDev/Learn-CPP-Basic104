@@ -1,25 +1,33 @@
 #include <iostream>
 
-class Student{
+class Pizza{
     public:
-        std::string name;
-        int age;
-        double gpa;
-    Student(std::string name, int age, double gpa){
-        this->name = name;
-        this->age = age;
-        this->gpa = gpa;
+        std::string topping1;
+        std::string topping2;
+
+    Pizza(){
+
+    }
+    Pizza(std::string topping1){
+        this->topping1 = topping1;
+    }
+    Pizza(std::string topping1, std::string topping2){
+        this->topping1 = topping1;
+        this->topping2 = topping2;
     }
        
 };
 
 int main(){
     
-    Student student1("Spongebob", 25, 3.2);
+    Pizza pizaa1("pepperoni");
+    Pizza pizaa2("pepperoni", "mushroom");
+    Pizza pizaa3;
 
-    std::cout << student1.name << '\n';
-    std::cout << student1.age << '\n';
-    std::cout << student1.gpa << '\n';
+    std::cout << pizaa1.topping1 << '\n';
+
+    std::cout << pizaa2.topping1 << '\n';
+    std::cout << pizaa2.topping2 << '\n';
 
     return 0;
 }
