@@ -1,23 +1,23 @@
 #include <iostream>
 
-void swap(std::string &x, std::string &y);
+void printInfo(const std::string &name, const int &age);
 
 int main(){
 
-    std::string x = "Kool-Aid";
-    std::string y = "Water";
+    // const parameter = parameter that is effectively read-only
+    //                   code is more secure & converys intent
+    //                   useful for references and pointers
 
-    swap(x, y);
+    std::string name = "Naruto";
+    int age = 33;
 
-    std::cout << "X: " << x << '\n';
-    std::cout << "Y: " << y << '\n';
+    printInfo(name, age);
 
     return 0;
 }
 
-void swap(std::string &x, std::string &y){
-    std::string temp;
-    temp = x;
-    x = y;
-    y = temp;
+void printInfo(const std::string &name, const int &age){
+    std::cout << name << '\n';
+    std::cout << age << '\n';       
+
 }
