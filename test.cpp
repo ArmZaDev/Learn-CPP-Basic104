@@ -1,28 +1,24 @@
 #include <iostream>
+template <typename T, typename U>
+auto max(T x, U y){
+    return (x > y) ? x : y;
+}
+/*
+int max(int x, int y){
+    return (x > y) ? x : y;
+}
 
-int factorial(int num);
+double max(double x, double y){
+    return (x > y) ? x : y;
+}
+
+char max(char x, char y){
+    return (x > y) ? x : y;
+}*/
 
 int main(){
     
-    std::cout << factorial(10);
+    std::cout << max(1, 2.1) << '\n';
 
     return 0;
-}
-
-int factorial(int num){
-
-    if(num > 1){
-        return num * factorial(num - 1);
-    }
-    else{
-        return 1;
-    }
-
-    /*
-    int result = 1;
-    for(int i = 1; i <= num; i++){ 
-        result = result * i;
-    }
-    return result;
-    */
 }
