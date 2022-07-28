@@ -2,17 +2,17 @@
 
 int main(){
     
-    std::string name = "Naruto";
-    int age = 33;
-    std::string freePizza[5] = {"pizza1", "pizza2", "pizza3", "pizza4", "pizza5"};
-    
-    std::string *pName = &name;
-    int *pAge = &age;
-    std::string *pFreePizza = freePizza;
+    int *pointer = nullptr;
+    int x = 123;
 
-    std::cout << *pName << '\n';
-    std::cout << *pAge << '\n';
-    std::cout << *pFreePizza << '\n';
+    pointer = &x;
+
+    if(pointer == nullptr){
+        std::cout << "address was not assigned!\n";
+    }
+    else{
+        std::cout << "address was assigned!\n";
+    }
 
     return 0;
 }
